@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ページタイトルと説明 -->
+  <title>Fin – カスタマーサービス向けNo.1 AIエージェント</title>
+  <meta name="description" content="Finはカスタマーサービス向けNo.1 AIエージェントです。最高性能のAIエージェントシステムで、より高品質な顧客体験と高い解決率を提供します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 日本語用フォント -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* 基本スタイル */
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      margin: 0;
+      color: #1a1a1a;
+      line-height: 1.6;
+      background-color: #ffffff;
+    }
+    h1, h2, h3 {
+      margin-top: 0;
+      margin-bottom: 0.6em;
+      font-weight: 700;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+    a {
+      color: #0055b8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .section {
+      padding: 60px 20px;
+    }
+    .light-bg {
+      background-color: #f5f7fa;
+    }
+    .dark-bg {
+      background-color: #edf2f9;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero {
+      text-align: center;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      background: linear-gradient(180deg, #eef5ff 0%, #ffffff 100%);
+    }
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 40px;
+      border-radius: 8px;
+    }
+    .hero .cta-buttons {
+      margin-top: 30px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: 500;
+      margin-right: 12px;
+      margin-bottom: 12px;
+      transition: background-color 0.2s ease;
+    }
+    .btn-primary {
+      background-color: #0055b8;
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background-color: #003f87;
+    }
+    .btn-secondary {
+      background-color: #ffffff;
+      color: #0055b8;
+      border: 2px solid #0055b8;
+    }
+    .btn-secondary:hover {
+      background-color: #f0f8ff;
+    }
+    /* リストのスタイル */
+    ul.bullet-list {
+      list-style-type: disc;
+      margin-left: 1.5em;
+    }
+    /* セクションタイトル */
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.4em;
+    }
+    .subheading {
+      color: #0055b8;
+      font-weight: 500;
+      margin-bottom: 0.2em;
+    }
+    /* カードレイアウト */
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      padding: 24px;
+      flex: 1 1 calc(50% - 24px);
+      box-sizing: border-box;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5em;
+      color: #0055b8;
+    }
+    .card p {
+      font-size: 0.95rem;
+    }
+    /* 価格表 */
+    .pricing-table {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .pricing-plan {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      padding: 24px;
+      flex: 1 1 calc(50% - 24px);
+      box-sizing: border-box;
+    }
+    .pricing-plan h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.6em;
+      color: #0055b8;
+    }
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0.4em 0;
+      color: #1a1a1a;
+    }
+    .pricing-plan ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 1em 0;
+    }
+    .pricing-plan li {
+      margin-bottom: 0.5em;
+    }
+    .pricing-plan .buttons {
+      margin-top: 1em;
+    }
+    /* フッター */
+    footer {
+      background-color: #f5f7fa;
+      padding: 40px 20px;
+      color: #666;
+      font-size: 0.85rem;
+    }
+    footer .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+    footer .footer-section {
+      flex: 1 1 150px;
+    }
+    footer .footer-section h4 {
+      font-size: 1rem;
+      margin-bottom: 0.6em;
+      color: #0055b8;
+    }
+    footer .footer-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    footer .footer-section li {
+      margin-bottom: 0.4em;
+    }
+    footer small {
+      display: block;
+      margin-top: 20px;
+    }
+    /* レスポンシブ対応 */
+    @media (max-width: 768px) {
+      .card-grid, .pricing-table, footer .footer-links {
+        flex-direction: column;
+      }
+      .card, .pricing-plan {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <nav style="background-color:#ffffff;border-bottom:1px solid #e0e0e0;">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;">
+        <div style="font-size:1.4rem;font-weight:700;color:#0055b8;">Fin</div>
+        <div style="font-size:0.9rem;">
+          <!-- シンプルなメニュー：必要に応じてリンク先を追加できます -->
+          <a href="#system" style="margin-right:16px;">システム</a>
+          <a href="#performance" style="margin-right:16px;">パフォーマンス</a>
+          <a href="#technology" style="margin-right:16px;">技術</a>
+          <a href="#integration" style="margin-right:16px;">連携</a>
+          <a href="#pricing" style="margin-right:16px;">料金</a>
+          <a href="#cta-bottom" class="btn btn-primary" style="font-size:0.85rem;padding:8px 16px;">無料トライアル</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- ヒーローセクション -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1 style="font-size:2.4rem;line-height:1.3;">カスタマーサービス向けNo.1&nbsp;AIエージェント</h1>
+      <ul class="bullet-list" style="font-size:1.1rem;margin-top:1em;">
+        <li>性能評価でNo.1</li>
+        <li>競合比較でNo.1</li>
+        <li>G2ランキングでNo.1</li>
+      </ul>
+      <p style="font-size:1.1rem;max-width:720px;margin:1.5em auto 0;">Finはカスタマーサービスにおける最高性能のAIエージェントであり、他のどのAIエージェントよりも高品質な顧客体験と高い解決率を提供します:contentReference[oaicite:0]{index=0}。</p>
+      <div class="cta-buttons">
+        <a href="#pricing" class="btn btn-primary">無料トライアルを開始</a>
+        <a href="#system" class="btn btn-secondary">詳細を見る</a>
+      </div>
+      <!-- 装飾用画像。生成した画像ファイルを同じディレクトリに配置してください -->
+      <img src="fin_ai_hero.png" alt="AI技術を表す抽象イラスト">
+    </div>
+  </section>
+  <!-- システムセクション -->
+  <section class="section light-bg" id="system">
+    <div class="container">
+      <div class="subheading">AIエージェントシステム</div>
+      <h2 class="section-title">完全に構成可能なAIエージェントシステム</h2>
+      <p>Finはカスタマーサービスにおいて唯一、完全に構成可能なAIエージェントシステムです。サポートチームはノーコードのUIでFinを自由にカスタマイズ、テスト、継続的に改善できます:contentReference[oaicite:1]{index=1}。</p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>分析</h3>
+          <p>トレンドの発見、コンテンツギャップの補完、品質問題の修正を通じてFinを監視・分析し最適化します:contentReference[oaicite:2]{index=2}。</p>
+          <ul class="bullet-list">
+            <li>Finパフォーマンスレポート</li>
+            <li>顧客体験スコア</li>
+            <li>総合レポート</li>
+            <li>Finカスタムレポート</li>
+            <li>トピックエクスプローラー</li>
+            <li>未解決質問レポート</li>
+            <li>会話監視</li>
+            <li>Finダッシュボードの最適化</li>
+            <li>提案</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>トレーニング</h3>
+          <p>Finの語調を調整し、サポートナレッジやポリシーを教え、45以上の言語で複雑なタスクを処理する方法を設定します:contentReference[oaicite:3]{index=3}。</p>
+          <ul class="bullet-list">
+            <li>複数ソースからの生成回答</li>
+            <li>ナレッジソース</li>
+            <li>Finナレッジ管理</li>
+            <li>Finガイダンス</li>
+            <li>語調</li>
+            <li>多言語対応・リアルタイム翻訳</li>
+            <li>コンテンツターゲティング</li>
+            <li>Finタスク</li>
+            <li>パーソナライズされた回答</li>
+            <li>データコネクタテンプレート</li>
+            <li>Finビジョン</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>テスト</h3>
+          <p>回答をテストし、それを形成するソースや設定を確認し、パフォーマンスを最適化するための具体的な提案を受け取ります:contentReference[oaicite:4]{index=4}。</p>
+          <ul class="bullet-list">
+            <li>バッチテスト</li>
+            <li>回答評価</li>
+            <li>Finプレビュー</li>
+            <li>回答分析</li>
+            <li>対象ユーザーでのテスト</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>展開</h3>
+          <p>メール、ライブチャットから電話、SMS、ソーシャルまで、Finはあらゆるチャネルで、いつでもあらゆる質問に回答できます:contentReference[oaicite:5]{index=5}。</p>
+          <ul class="bullet-list">
+            <li>Fin Voice</li>
+            <li>ライブチャット</li>
+            <li>メール</li>
+            <li>API</li>
+            <li>WhatsApp &amp; SMS</li>
+            <li>ソーシャル</li>
+            <li>Slack</li>
+            <li>ワークフロー</li>
+            <li>人間へのエスカレーション</li>
+            <li>オーディエンスターゲティング</li>
+            <li>利用制限と通知</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:40px;text-align:center;">
+        <a href="#pricing" class="btn btn-primary">今すぐ導入を検討</a>
+      </div>
+    </div>
+  </section>
+  <!-- パフォーマンスセクション -->
+  <section class="section dark-bg" id="performance">
+    <div class="container">
+      <div class="subheading">比類なきパフォーマンス</div>
+      <h2 class="section-title">Finは常にあらゆる競合を上回ります</h2>
+      <p>Finは別次元の存在です。現在、会話の99％に関与し、複雑なものも含め最大65％を完全解決しています:contentReference[oaicite:6]{index=6}。</p>
+      <p>世界の先進AI企業からも信頼され、自社開発と購入を迷っているなら、買うべきだ—それもFinを買うべきだと助言されています:contentReference[oaicite:7]{index=7}。</p>
+      <div style="margin-top:40px;text-align:center;">
+        <a href="#pricing" class="btn btn-primary">成功事例を見る</a>
+      </div>
+    </div>
+  </section>
+  <!-- 技術セクション -->
+  <section class="section light-bg" id="technology">
+    <div class="container">
+      <div class="subheading">卓越した技術</div>
+      <h2 class="section-title">Fin AIエンジン™による圧倒的な処理能力</h2>
+      <p>Fin AIエンジン™はカスタマーサービス向けに設計された特許取得済みのAIアーキテクチャです。各レイヤーは精度・速度・信頼性に最適化されており、Finは競合エージェントよりも多くの会話を効果的に解決できます:contentReference[oaicite:8]{index=8}。</p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>クエリの洗練</h3>
+          <p>LLMが生成する回答の精度を最適化するためには、入力を理解しやすい形に整える必要があります:contentReference[oaicite:9]{index=9}.</p>
+        </div>
+        <div class="card">
+          <h3>回答生成</h3>
+          <p>回答生成には、Fin AIエンジン™が独自に強化したRAG（検索拡張生成）アーキテクチャを使用します:contentReference[oaicite:10]{index=10}.</p>
+        </div>
+        <div class="card">
+          <h3>精度の検証</h3>
+          <p>最終段階では、Fin AIエンジン™がLLMの出力が精度と安全基準を満たしているかどうかを確認します:contentReference[oaicite:11]{index=11}.</p>
+        </div>
+        <div class="card">
+          <h3>エンジン最適化</h3>
+          <p>Fin AIエンジン™は回答生成、効率、精度、カバレッジを最適化する統合ツールを用いてパフォーマンスを調整します:contentReference[oaicite:12]{index=12}.</p>
+        </div>
+      </div>
+      <p style="margin-top:1.5em;">ISO 27001、ISO 27018、ISO 27701、GDPR、CCPAなどの認証取得により、Finは最高水準の安全性とコンプライアンスを保証しています:contentReference[oaicite:13]{index=13}。</p>
+    </div>
+  </section>
+  <!-- AIチームセクション -->
+  <section class="section dark-bg" id="team">
+    <div class="container">
+      <div class="subheading">AIチーム</div>
+      <h2 class="section-title">世界クラスのAI専門家が構築</h2>
+      <p>40名を超える機械学習の科学者・エンジニア・デザイナーからなるAIグループが最先端の研究と実験を通じてFinの性能を継続的に改善し、その知見をAI研究ブログで公開しています:contentReference[oaicite:14]{index=14}。</p>
+    </div>
+  </section>
+  <!-- 連携セクション -->
+  <section class="section light-bg" id="integration">
+    <div class="container">
+      <div class="subheading">シームレスな連携</div>
+      <h2 class="section-title">どのヘルプデスクともスムーズに連携</h2>
+      <p>Finは既存のヘルプデスクやIntercomカスタマーサービススイートに簡単に組み込み、他のプラットフォームやカスタムチャネルにも対応します:contentReference[oaicite:15]{index=15}.</p>
+      <ul class="bullet-list" style="max-width:800px;">
+        <li>1時間以内に設定完了</li>
+        <li>チケット・メール・ライブチャットなど現在のサポートチャネルに統合:contentReference[oaicite:16]{index=16}</li>
+        <li>既存の割り当てルールや自動化、レポートに準拠:contentReference[oaicite:17]{index=17}</li>
+        <li>希望のインボックスにエスカレーション</li>
+      </ul>
+    </div>
+  </section>
+  <!-- 料金セクション -->
+  <section class="section dark-bg" id="pricing">
+    <div class="container">
+      <div class="subheading">料金</div>
+      <h2 class="section-title">カスタマーサービス向けNo.1&nbsp;AIエージェントを導入</h2>
+      <p>Finはさまざまなヘルプデスク環境に柔軟に対応する料金体系を用意しています。</p>
+      <div class="pricing-table">
+        <div class="pricing-plan">
+          <h3>既存ヘルプデスクで利用</h3>
+          <p>Fin AIエージェントはZendesk、Salesforce、HubSpotなどあらゆるヘルプデスクとシームレスに動作します:contentReference[oaicite:18]{index=18}.</p>
+          <div class="price">0.99ドル<span style="font-size:1rem;font-weight:400;">／1解決</span></div>
+          <ul>
+            <li>月最低50回の解決契約:contentReference[oaicite:19]{index=19}</li>
+            <li>14日間無料トライアル</li>
+          </ul>
+          <div class="buttons">
+            <a href="#cta-bottom" class="btn btn-primary">無料トライアル</a>
+            <a href="#contact" class="btn btn-secondary">デモの予約</a>
+          </div>
+        </div>
+        <div class="pricing-plan">
+          <h3>Intercomヘルプデスクと併用</h3>
+          <p>Fin AIエージェントとIntercomヘルプデスクを組み合わせることで、Intercomカスタマーサービススイートを最大限に活用できます:contentReference[oaicite:20]{index=20}.</p>
+          <div class="price">0.99ドル<span style="font-size:1rem;font-weight:400;">／1解決</span> + 29ドル<span style="font-size:1rem;font-weight:400;">／席／月</span></div>
+          <ul>
+            <li>14日間無料トライアル:contentReference[oaicite:21]{index=21}</li>
+          </ul>
+          <div class="buttons">
+            <a href="#cta-bottom" class="btn btn-primary">無料トライアル</a>
+            <a href="#contact" class="btn btn-secondary">デモの予約</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CTAセクション -->
+  <section class="section light-bg" id="cta-bottom">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">今すぐNo.1&nbsp;AIエージェントを導入しましょう</h2>
+      <p>Finはカスタマーサービスで最高性能のAIエージェントであり、業界をリードする機能と特許取得済みFin AIエンジン™を組み合わせ、サポートボリュームの62％を即座に解決します:contentReference[oaicite:22]{index=22}。</p>
+      <p>設定は3ステップ。1. ナレッジベースを同期 2. Finの動作・語調・アクションを設定 3. Finをテストして運用開始:contentReference[oaicite:23]{index=23}。</p>
+      <p>解決単位の料金体系で、重要な成果である会話の解決数に応じて支払います。1解決につきわずか0.99ドル:contentReference[oaicite:24]{index=24}.</p>
+      <p>対応チャネルは音声、メール、Intercomメッセンジャーでのライブチャット、Facebook Messenger、WhatsApp、Instagram DM、Slack、Android、iOSなど多岐にわたります:contentReference[oaicite:25]{index=25}.</p>
+      <div class="cta-buttons">
+        <a href="#pricing" class="btn btn-primary">無料トライアルを開始</a>
+        <a href="#contact" class="btn btn-secondary">デモの予約</a>
+      </div>
+    </div>
+  </section>
+  <!-- フッター -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <div class="footer-section">
+          <h4>製品</h4>
+          <ul>
+            <li><a href="#system">AIエージェントシステム</a></li>
+            <li><a href="#performance">パフォーマンス</a></li>
+            <li><a href="#technology">技術</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>リソース</h4>
+          <ul>
+            <li><a href="#team">AIチーム</a></li>
+            <li><a href="https://trust.intercom.com" target="_blank">セキュリティ</a></li>
+            <li><a href="#pricing">料金</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>イベント</h4>
+          <ul>
+            <li><a href="https://pioneer.fin.ai" target="_blank">Pioneer</a></li>
+            <li><a href="https://bfy.fin.ai" target="_blank">Built For You</a></li>
+            <li><a href="https://events.intercom.com" target="_blank">ウェビナー</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Fin in Action</h4>
+          <ul>
+            <li><a href="#cta-bottom">無料トライアル</a></li>
+            <li><a href="#contact">デモの予約</a></li>
+          </ul>
+        </div>
+      </div>
+      <small>&copy; 2025 Fin. All Rights Reserved.</small>
+    </div>
+  </footer>
+</body>
+</html>
